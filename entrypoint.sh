@@ -10,23 +10,12 @@ else
     echo success: "$GITHUB_EVENT_PATH"
 fi
 
-echo "$@"
-ls -la /
-ls -la /github
-ls -la /github/file_commands
-ls -la /github/home
-ls -la /github/workflow
-ls -la /github/workspace
-ls -la /tmp
-
-# echo jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@"
-
 if jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@";
 then
     echo "found keyword '$@' in commit message"
     VERSION=$(date +%F.%s)
 
-    DATA="$(printf '{"tag-name":"v%s", ' $VERSION)"
+    DATA="$(printf '{"tag_name":"v%s", ' $VERSION)"
     DATA="$DATA $(printf '"target_commitish":"master",')"
     DATA="$DATA $(printf '"name":"v%s",' $VERSION)"
     DATA="$DATA $(printf '"body":"Automated release based on keyword: %s",' "$@")"
