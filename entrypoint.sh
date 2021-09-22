@@ -11,9 +11,9 @@ else
 fi
 
 echo "$@"
-cat "$GITHUB_EVENT_PATH"
 ls -la /
 ls -la /github
+cat "$GITHUB_EVENT_PATH"
 # echo jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@"
 
 if jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@";
