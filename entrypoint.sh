@@ -1,4 +1,5 @@
 #!/bin/bash
+# exit immediately on error
 set -e
 if echo "$*" | grep -i -q fix;
 then
