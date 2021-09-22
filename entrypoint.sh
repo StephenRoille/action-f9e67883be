@@ -10,6 +10,9 @@ else
     echo success: "$GITHUB_EVENT_PATH"
 fi
 
+echo "$@"
+echo jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@"
+
 if jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@";
 then
     echo "found keyword '$@' in commit message"
