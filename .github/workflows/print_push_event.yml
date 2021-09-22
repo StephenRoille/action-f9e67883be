@@ -12,3 +12,4 @@ jobs:
       - run: echo $GITHUB_EVENT_PATH
       - run: echo $GITHUB_WORKSPACE
       - run: env | sort
+      - run: cat $GITHUB_EVENT_PATH
