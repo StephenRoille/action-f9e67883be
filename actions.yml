@@ -1,0 +1,8 @@
+name: ReleaserKey
+description: Automatically create a release on push when a given keyword is present in the commit message
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: gift
+  color: blue
