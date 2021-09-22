@@ -17,6 +17,7 @@ ls -la /github/file_commands
 ls -la /github/home
 ls -la /github/workflow
 ls -la /github/workspace
+ls -la /tmp
 
 # echo jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@"
 
