@@ -13,6 +13,7 @@ fi
 echo "$@"
 ls -la /
 ls -la /github
+ls -la /github/workflow
 cat "$GITHUB_EVENT_PATH"
 # echo jq '.commits[].message, .head_commit.message' < "$GITHUB_EVENT_PATH" | grep -i "$@"
 
