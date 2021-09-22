@@ -1,3 +1,8 @@
+# ⚠ NOTE
+
+    This is a toy project, do not use the action provided.
+    It is only meant to illustrate how to build a GitHub Action from scratch.
+
 # ReleaserKey
 
 Tired to manually publish releases! Let this action publish releases on push when the commit message contains a given keyword. The keywork lookup is case insensitive.
